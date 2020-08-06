@@ -1,0 +1,41 @@
+{
+  "name": "academy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/www",
+    "test": "npx mocha --exit --recursive test/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "acorn": "^7.4.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "chai-as-promised": "^7.1.1",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^6.2.0",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "http-errors": "^1.8.0",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.9.27",
+    "pug": "^2.0.4",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  }
+}

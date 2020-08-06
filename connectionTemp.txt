@@ -1,0 +1,34 @@
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://dbUser:Changa77@cluster0.tjmp3.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("production").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://dbUser:Changa77@cluster0.tjmp3.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("dev").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://dbUser:Changa77@cluster0.tjmp3.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+
+
