@@ -1,6 +1,8 @@
 const express = require('express');
-
+const config = require('../../config')[process.env.NODE_ENV || 'development'];
+log = config.log();
 const router = express.Router();
+
 module.exports = (params) => {
   const { speakers } = params;
 
@@ -15,10 +17,12 @@ module.exports = (params) => {
     // This will fall through and create a NOT FOUND
     if (!speaker) return next();
     const artwork = await speakers.getArtworkForSpeaker(req.params.name);
-    console.log(speaker);
-    console.log(artwork);
+    /* log.info(speaker);
+    log.info(artwork);*/
     return res.render('speakers/detail', {
-      page: req.params.name, artwork, speaker,
+      page: req.params.name,
+      artwork,
+      speaker,
     });
   });
   return router;
