@@ -14,7 +14,7 @@ module.exports = {
       user: 'forge',
       host: 'www.keown.digital',
       ref: 'origin/master',
-      repo: 'git@gkithub.com/keownrwk/meetup.git',
+      repo: 'git@github.com/keownrwk/meetup.git',
 
       // Make sure this directory exists on your server or change this entry to match your directory structure
       path: '/home/forge/www.keown.digital',
