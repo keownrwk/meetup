@@ -1,6 +1,6 @@
 const express = require('express');
 const config = require('../../config')[process.env.NODE_ENV || 'development'];
-log = config.log();
+/*log = config.log();*/
 const router = express.Router();
 
 module.exports = (params) => {
