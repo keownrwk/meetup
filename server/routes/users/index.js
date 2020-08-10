@@ -19,9 +19,8 @@ module.exports = (params) => {
       failureRedirect: '/users/login?error=true',
     })
   );
-  router.get('/login', redirectIfLoggedIn, (req, res) =>
-    res.render('users/login', { error: req.query.error })
-  );
+  /*  router.get('/login', redirectIfLoggedIn, (req, res) => */
+  router.get('/login', (req, res) => res.render('users/login', { error: req.query.error }));
   router.get('/logout', (req, res) => {
     req.logout();
     return res.redirect('../');
