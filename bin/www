@@ -53,7 +53,7 @@ db.connect(config.database.dsn)
   .catch((err) => {
     log.fatal(err);
   });
-if (cluster.isMaster) {
+/* if (cluster.isMaster) {
   log.info(`Master ${process.pid} is running`);
   for (let i = 0; i < numCPUs; i += 1) {
     cluster.fork();
@@ -71,7 +71,7 @@ if (cluster.isMaster) {
     .catch((err) => {
       log.fatal(err);
     });
-}
+} */
 
 server.on('listening', () => {
   const addr = server.address();
