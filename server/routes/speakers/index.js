@@ -1,6 +1,6 @@
 const express = require('express');
 const config = require('../../config')[process.env.NODE_ENV || 'development'];
-/*log = config.log();*/
+/* log = config.log(); */
 const router = express.Router();
 
 module.exports = (params) => {
@@ -18,7 +18,7 @@ module.exports = (params) => {
     if (!speaker) return next();
     const artwork = await speakers.getArtworkForSpeaker(req.params.name);
     /* log.info(speaker);
-    log.info(artwork);*/
+    log.info(artwork); */
     return res.render('speakers/detail', {
       page: req.params.name,
       artwork,

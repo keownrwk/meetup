@@ -4,16 +4,17 @@
  * Module dependencies.
  */
 const http = require('http');
-/* cluster = require('cluster');
-os = require('os'); */
+cluster = require('cluster');
+os = require('os');
 const config = require('../server/config')[process.env.NODE_ENV || 'development'];
 const app = require('../server/app')(config);
 const db = require('../server/lib/db.js');
 
 const log = config.log();
 
-// numCPUs = os.cpus().length;
-// log.info('num cpus: ', numCPUs);
+const numCPUs = os.cpus().length;
+log.info('num cpus: ', numCPUs);
+
 // Helper functions
 
 /**
@@ -52,7 +53,7 @@ db.connect(config.database.dsn)
   .catch((err) => {
     log.fatal(err);
   });
-/* if (cluster.isMaster) {
+if (cluster.isMaster) {
   log.info(`Master ${process.pid} is running`);
   for (let i = 0; i < numCPUs; i += 1) {
     cluster.fork();
@@ -70,7 +71,7 @@ db.connect(config.database.dsn)
     .catch((err) => {
       log.fatal(err);
     });
-} */
+}
 
 server.on('listening', () => {
   const addr = server.address();
